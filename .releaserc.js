@@ -1,5 +1,6 @@
 module.exports = {
-	branches: ['main'],
+  branches: ['main'],
+  tagFormat: `${process.env.MC_VERION}-v${version}`,
 	plugins: [
 		[
 			'@semantic-release/commit-analyzer',
@@ -22,14 +23,6 @@ module.exports = {
 			{
 				prepareCmd: './build.sh ${nextRelease.version}',
 				publishCmd: './release.sh ${nextRelease.version}',
-			},
-		],
-		[
-			'@semantic-release/git',
-			{
-				assets: ['GoDough.csproj'],
-				message:
-					'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
 			},
 		],
 	],
