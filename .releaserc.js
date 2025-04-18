@@ -17,9 +17,7 @@ module.exports = {
       },
     ],
     '@semantic-release/release-notes-generator',
-    ['@semantic-release/github', {
-      releaseNameTemplate: process.env.MC_VERSION + '-<%= nextRelease.name %>',
-    }],
+    '@semantic-release/github',
 		[
 			'@semantic-release/exec',
 			{
