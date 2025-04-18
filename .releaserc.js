@@ -1,6 +1,6 @@
 module.exports = {
   branches: ['main'],
-  tagFormat: `${process.env.MC_VERION}-v${version}`,
+  tagFormat: `${process.env.MC_VERSION}-v${version}`,
   plugins: [
     [
       '@semantic-release/commit-analyzer',
