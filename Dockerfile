@@ -21,3 +21,7 @@ RUN cd /minecraft/build-tools && java -jar BuildTools.jar --rev ${MC_VERSION}
 # Install
 RUN mv /minecraft/build-tools/spigot-${MC_VERSION}.jar /minecraft/server/spigot.jar
 RUN echo "${MC_VERSION}" > /minecraft/server/version.txt
+RUN echo "eula=true" > /minecraft/server/eula.txt
+
+WORKDIR /minecraft/server/
+CMD [ "/usr/bin/java", "-Xmx8192M", "-Xms4096M", "-jar", "spigot.jar", "--noconsole" ]
