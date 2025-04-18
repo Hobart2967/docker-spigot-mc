@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 # <version> | 'latest'
-ENV MC_VERSION=1.20.1
+ARG MC_VERSION
 ENV JAVA_VERSION=21
 
 RUN apk add --no-cache \
